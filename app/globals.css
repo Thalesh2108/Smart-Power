@@ -1,26 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Clean Premium Light Palette (Emerald & Indigo accents) */
+  --color-primary: 158 64% 40%;
+  --color-primary-dark: 158 64% 32%;
+  --color-secondary: 239 84% 60%;
+  --color-accent: 38 92% 50%;
+
+  /* Light Clean Backgrounds */
+  --background: 210 40% 98%;
+  --background-secondary: 0 0% 100%;
+  --background-tertiary: 214 32% 95%;
+  --foreground: 222 47% 11%;
+
+  /* White Premium Cards */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  /* Borders & Inputs */
+  --border: 214 32% 88%;
+  --input: 0 0% 100%;
+  --ring: 158 64% 40%;
+
+  /* Text */
+  --muted: 215 16% 47%;
+  --muted-foreground: 215 16% 35%;
+
+  /* Status Colors */
+  --color-success: 158 64% 40%;
+  --color-warning: 38 92% 50%;
+  --color-danger: 0 72% 51%;
+  --color-info: 199 89% 48%;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(158, 64%, 40%) 0%, hsl(173, 80%, 36%) 100%);
+  --gradient-success: linear-gradient(135deg, hsl(158, 64%, 40%) 0%, hsl(142, 71%, 45%) 100%);
+  --gradient-warning: linear-gradient(135deg, hsl(38, 92%, 50%) 0%, hsl(25, 92%, 50%) 100%);
+  --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px -2px rgba(15, 23, 42, 0.07), 0 1px 4px -1px rgba(15, 23, 42, 0.04);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ─── Glassmorphism Light ─────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-dark {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E2E8F0;
+}
+
+/* ─── Card Styles ────────────────────────────────────────────── */
+.card-gradient {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ─── Gradient Text ──────────────────────────────────────────── */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Typographic Readability Scale-up ───────────────────────── */
+.text-xs {
+  font-size: 13.5px !important; /* ~13.5px instead of 12px */
+}
+.text-\[10px\] {
+  font-size: 12px !important; /* Scale up from 10px */
+}
+.text-\[11px\] {
+  font-size: 12.5px !important; /* Scale up from 11px */
+}
+.text-sm {
+  font-size: 14.5px !important; /* Scale up from 14px */
+}
+.text-base {
+  font-size: 16.5px !important; /* Scale up from 16px */
+}
+
+/* Ensure inputs and buttons have consistent, comfortable spacing and line-height */
+input, select, textarea, button {
+  font-size: 15.5px !important;
+  line-height: 1.5;
+}
+label {
+  font-size: 13.5px !important;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
